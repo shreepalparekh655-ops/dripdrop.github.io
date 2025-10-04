@@ -1,27 +1,27 @@
-xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Drip Drop Laundry Service</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f6fcff;
+      background: url('background.jpg') center center/cover no-repeat fixed;
       color: #222;
     }
     header {
-      background: #007acc;
+      background: rgba(0,122,204,0.87);
       color: #fff;
-      padding: 32px 0 16px 0;
+      padding: 36px 0 18px 0;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     }
     nav {
-      background: #005f99;
+      background: rgba(0,95,153,0.85);
       text-align: center;
-      padding: 12px 0;
+      padding: 13px 0;
     }
     nav a {
       color: #fff;
@@ -33,28 +33,61 @@ xml
       text-decoration: underline;
     }
     section {
-      max-width: 900px;
+      max-width: 940px;
       margin: 40px auto;
-      padding: 0 24px;
+      padding: 32px;
+      background: rgba(255,255,255,0.97);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     h1, h2 {
       color: #007acc;
     }
+    .features-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      list-style-type: disc;
+      padding-left: 20px;
+    }
     .pricing-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 24px 0;
+      margin: 28px 0;
     }
     .pricing-table th, .pricing-table td {
-      border: 1px solid #ddd;
-      padding: 14px;
+      border: 1px solid #c5e8fd;
+      padding: 12px;
       text-align: center;
     }
     .pricing-table th {
-      background: #bce5ff;
+      background: #e1f3ff;
+    }
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 25px;
+    }
+    .role-card {
+      width: 140px;
+      margin: 14px;
+      text-align: center;
+      background: #f0f8ff;
+      border-radius: 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+      padding: 14px;
+    }
+    .role-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      background: #d5eaf6;
     }
     footer {
-      background: #007acc;
+      background: rgba(0,122,204,0.87);
       color: #fff;
       text-align: center;
       padding: 16px 0;
@@ -68,7 +101,8 @@ xml
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
+      <a href="#features">App Features</a>
+      <a href="#roles">Key Roles</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -81,18 +115,53 @@ xml
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Drip Drop connects you to reliable laundry vendors with app-based booking, real-time tracking, and hygienic handling for peace of mind.</p>
+    <p>Drip Drop connects you to reliable laundry vendors through our app, offering booking, live tracking, and hygienic delivery for peace of mind.</p>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Flexible subscription and pay-per-use options</li>
-      <li>Real-time order tracking via app</li>
-      <li>Contactless pick-up and delivery with smart lockers</li>
-      <li>UV sterilization & sealed garment packaging</li>
-      <li>AI-powered personalized laundry schedules</li>
+  <section id="features">
+    <h2>App Features</h2>
+    <ul class="features-list">
+      <li>User dashboard for order and history management</li>
+      <li>Flexible scheduling for pickup & delivery</li>
+      <li>Real-time notifications on laundry status</li>
+      <li>AI recommendations for personalized wash care</li>
+      <li>Digital wallet for secure payments</li>
+      <li>Responsive customer support</li>
+      <li>Loyalty rewards and referral benefits</li>
+      <li>Order live-tracking and export history</li>
+      <li>Smart locker integration for secure drop/pickup</li>
+      <li>Hygienic, UV-sterilized garment packaging</li>
     </ul>
+  </section>
+
+  <section id="roles">
+    <h2>Key Team Roles</h2>
+    <div class="roles">
+      <div class="role-card">
+        <img src="role1.jpg" alt="Shreepal Parekh" class="role-img" />
+        <div>Managing Director<br/>Shreepal Parekh</div>
+      </div>
+      <div class="role-card">
+        <img src="role2.jpg" alt="Simran Begrajka" class="role-img" />
+        <div>CEO<br/>Simran Begrajka</div>
+      </div>
+      <div class="role-card">
+        <img src="role3.jpg" alt="Alefiya Ravat" class="role-img" />
+        <div>COO<br/>Alefiya Ravat</div>
+      </div>
+      <div class="role-card">
+        <img src="role4.jpg" alt="Akhast Dubey" class="role-img" />
+        <div>CFO<br/>Akhast Dubey</div>
+      </div>
+      <div class="role-card">
+        <img src="role5.jpg" alt="Lavanya Daudkhane" class="role-img" />
+        <div>CMO<br/>Lavanya Daudkhane</div>
+      </div>
+      <div class="role-card">
+        <img src="role6.jpg" alt="Harshini Gosalia" class="role-img" />
+        <div>CTO<br/>Harshini Gosalia</div>
+      </div>
+    </div>
   </section>
 
   <section id="pricing">
@@ -129,13 +198,13 @@ xml
           <td>Weekly Subscription</td>
           <td>Up to 15 items</td>
           <td>₹180</td>
-          <td>3 washes weekly, pickup/drop included</td>
+          <td>3 washes weekly, pick-up/drop included</td>
         </tr>
         <tr>
           <td>Monthly Subscription</td>
           <td>Up to 60 items</td>
           <td>₹1090</td>
-          <td>Monthly, priority delivery</td>
+          <td>Monthly payment, priority delivery</td>
         </tr>
         <tr>
           <td>Yearly Subscription</td>
