@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Drip Drop Laundry</title>
+  <title>Drip Drop Laundry Service</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,12 +43,34 @@
     h1, h2 {
       color: #007acc;
     }
-    .features-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      list-style-type: disc;
-      padding-left: 20px;
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-around;
+      margin-top: 24px;
+    }
+    .feature-card {
+      flex: 1 1 180px;
+      min-width: 200px;
+      max-width: 225px;
+      background: #f0f8ff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px 10px 15px 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .feature-img {
+      height: 62px;
+      width: 62px;
+      object-fit: contain;
+      border-radius: 15px;
+      background: #d5eaf6;
+      margin-bottom: 10px;
     }
     .pricing-table {
       width: 100%;
@@ -120,18 +142,33 @@
 
   <section id="features">
     <h2>App Features</h2>
-    <ul class="features-list">
-      <li>User dashboard for order and history management</li>
-      <li>Flexible scheduling for pickup & delivery</li>
-      <li>Real-time notifications on laundry status</li>
-      <li>AI recommendations for personalized wash care</li>
-      <li>Digital wallet for secure payments</li>
-      <li>Responsive customer support</li>
-      <li>Loyalty rewards and referral benefits</li>
-      <li>Order live-tracking and export history</li>
-      <li>Smart locker integration for secure drop/pickup</li>
-      <li>Hygienic, UV-sterilized garment packaging</li>
-    </ul>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="feature1.jpg" alt="Drip Drop Home Dashboard" class="feature-img" />
+        <strong>Home Dashboard</strong>
+        <p>Overview of orders, status, and account details at a glance.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feature2.jpg" alt="Schedule Pickup and Real-Time Alerts" class="feature-img" />
+        <strong>Schedule Pickup & Alerts</strong>
+        <p>Schedule pickups with instant real-time notifications.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feature3.jpg" alt="Personalized Wash Plan Recommendations" class="feature-img" />
+        <strong>Personalized Wash Plans</strong>
+        <p>Get AI-driven recommendations for best laundry care.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feature4.jpg" alt="Secure Payments and Customer Support" class="feature-img" />
+        <strong>Secure Payments & Support</strong>
+        <p>Pay online securely and access 24/7 customer service.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feature5.jpg" alt="Live Order Tracking & Status View" class="feature-img" />
+        <strong>Order Tracking & Status</strong>
+        <p>Track your laundry in real time, from pickup to delivery.</p>
+      </div>
+    </div>
   </section>
 
   <section id="roles">
@@ -219,13 +256,11 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: support@dripdrop.com</p>
-    <p>Phone: +91 8899664433</p>
+    <p>Phone: +91 12345 67890</p>
   </section>
 
   <footer>
     © 2025 Drip Drop Laundry Service
   </footer>
 </body>
-
 </html>
-
