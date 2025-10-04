@@ -5,220 +5,207 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Drip Drop Laundry Service</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-  /* Reset and basics */
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
   body, html {
-    margin: 0; padding: 0; box-sizing: border-box;
+    margin: 0; padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #d3eafd, #f3faff 70%);
-    color: #333;
+    background: #f5f7fa;
+    color: #202124;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Header */
   header {
-    background: linear-gradient(90deg, #004E92, #000428);
-    padding: 48px 0 32px;
-    text-align: center;
+    background: #1a73e8;
     color: white;
+    padding: 60px 20px 40px;
+    text-align: center;
     font-weight: 700;
-    font-size: 3rem;
-    letter-spacing: 1.3px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    font-size: 2.8rem;
+    letter-spacing: 1.25px;
+    box-shadow: 0 4px 15px rgba(26,115,232,0.4);
   }
 
   nav {
-    background: #003870;
-    padding: 14px 0;
+    background: white;
+    padding: 12px 0;
     display: flex;
     justify-content: center;
-    gap: 28px;
-    font-weight: 600;
+    gap: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   }
 
   nav a {
-    color: white;
+    color: #1a73e8;
     text-decoration: none;
-    font-size: 1.1rem;
-    position: relative;
-    transition: color 0.3s ease;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
   }
   nav a:hover {
-    color: #77bbff;
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 0;
-    background-color: #77bbff;
-    left: 0;
-    bottom: -6px;
-    transition: width 0.3s ease;
-  }
-  nav a:hover::after {
-    width: 100%;
+    background-color: #e8f0fe;
   }
 
-  /* Content sections */
-  section {
-    max-width: 960px;
-    background: white;
-    margin: 48px auto;
-    padding: 40px 36px;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Main content area */
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 24px;
   }
-  section:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+  section {
+    margin-bottom: 60px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(32,33,36,0.12);
+    padding: 32px 28px;
   }
 
   h2 {
-    color: #005497;
-    font-size: 2.2rem;
-    margin-bottom: 28px;
-    letter-spacing: 0.9px;
+    font-weight: 700;
+    color: #202124;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    border-bottom: 3px solid #1a73e8;
+    padding-bottom: 8px;
   }
 
   p {
-    font-size: 1.08rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #3c4043;
+    margin-bottom: 18px;
   }
 
-  /* Features */
+  /* Features grid */
   .features-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 28px;
   }
   .feature-card {
-    background: #eef6fd;
+    background: #f8fbff;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(68,151,236,.25);
-    width: 220px;
+    box-shadow: 0 3px 8px rgba(26,115,232,0.2);
     padding: 24px 20px;
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
   }
   .feature-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 12px 30px rgba(34,83,189,.35);
+    box-shadow: 0 12px 32px rgba(26,115,232,0.32);
+    transform: translateY(-8px);
   }
   .feature-img {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;
-    margin: 0 auto 14px;
-    border-radius: 16px;
-    background: #d7e7ff;
-    padding: 10px;
-    box-shadow: inset 0 2px 5px rgba(255,255,255,0.9);
+    height: 60px;
+    width: 60px;
+    margin-bottom: 14px;
   }
   .feature-card strong {
     display: block;
     font-size: 1.2rem;
-    color: #004e92;
-    margin-bottom: 8px;
+    color: #1a73e8;
+    margin-bottom: 10px;
   }
   .feature-card p {
-    color: #313131;
+    color: #4b4f56;
     font-weight: 500;
   }
 
   /* Roles */
   .roles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
     gap: 28px;
+    justify-content: center;
   }
   .role-card {
-    background: #f3faff;
-    box-shadow: 0 5px 18px rgba(0,78,146,0.3);
+    background: #e8f0fe;
     border-radius: 16px;
-    padding: 22px 15px;
-    width: 160px;
+    box-shadow: 0 6px 18px rgba(26,115,232,0.25);
     text-align: center;
-    cursor: default;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    padding: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
   .role-card:hover {
-    box-shadow: 0 18px 38px rgba(0,78,146,0.5);
+    box-shadow: 0 20px 45px rgba(26,115,232,0.40);
     transform: translateY(-10px);
   }
   .role-img {
-    margin: 0 auto 14px;
-    border-radius: 50%;
     width: 110px;
     height: 110px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: inset 0 2px 7px rgba(255,255,255,0.7);
-    background: #cee7ff;
+    margin-bottom: 12px;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.8);
+    background: white;
   }
   .role-card div {
-    font-weight: 600;
-    font-size: 1rem;
-    color: #004e92;
-    line-height: 1.3;
-    user-select: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1a73e8;
   }
 
   /* Pricing Table */
-  .pricing-table {
-    width: 100%;
+  table {
     border-collapse: collapse;
-    margin-top: 40px;
+    width: 100%;
     font-size: 1rem;
   }
-  .pricing-table th, .pricing-table td {
-    border: 1px solid #a2c0f7;
-    padding: 14px 22px;
-    color: #2c3e50;
-    letter-spacing: 0.04em;
+  th, td {
+    text-align: center;
+    padding: 16px 22px;
+    border-bottom: 1px solid #e0e0e0;
   }
-  .pricing-table th {
-    background: #c6dafc;
-    font-weight: 700;
+  th {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 600;
   }
-  .pricing-table tbody tr:nth-child(even) {
-    background-color: #f0f7ff;
-  }
-  .pricing-table tbody tr:hover {
-    background-color: #d7e8fe;
+  tr:hover {
+    background-color: #f1f7ff;
   }
 
-  /* Contact Section */
+  /* Contact */
   #contact p {
-    font-weight: 600;
     font-size: 1.1rem;
-    color: #065295;
+    font-weight: 600;
+    color: #1a73e8;
   }
 
   /* Footer */
   footer {
-    background: #00356b;
-    color: #c8d4ff;
+    background-color: #1a73e8;
+    color: white;
     text-align: center;
-    padding: 18px 0;
-    letter-spacing: 0.05em;
+    padding: 20px 0;
+    letter-spacing: 0.1em;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
-  /* Responsive */
-  @media (max-width: 780px) {
-    .features-grid, .roles {
-      flex-direction: column;
-      gap: 24px;
+  /* Responsive adjustments */
+  @media screen and (max-width: 600px){
+    header {
+      font-size: 2.2rem;
+      padding: 40px 10px 28px;
     }
-    .feature-card, .role-card {
-      max-width: 90vw;
-      margin: 0 auto;
+    nav {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    section {
+      padding: 24px 18px;
+      margin: 30px 10px;
     }
   }
 </style>
@@ -234,141 +221,142 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="home">
-    <h2>Welcome to Drip Drop</h2>
-    <p>Drip Drop is a cutting-edge tech-enabled laundry service designed for the modern busy student and professional.</p>
-    <p>Our mission is to make laundry effortless, with contactless pickups, hygienic packaging, and reliable delivery scheduled around your convenience.</p>
-    <p>Integrated real-time tracking and AI driven wash care ensure a seamless and personalized service experience every time.</p>
-  </section>
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Founded to revolutionize traditional laundry services, Drip Drop partners with trusted vendors to offer you app-based booking, transparent pricing, and sustainable, contactless operations.</p>
-    <p>With UV sterilization, sealed packaging, and AI personalized recommendations, we minimize your workload and environmental impact for healthier clothes and planet.</p>
-    <p>Our commitment extends beyond laundry to customer support and secure, digital payments, giving you peace of mind from scheduling to doorstep delivery.</p>
-  </section>
+  <main>
+    <section id="home">
+      <h2>Welcome to Drip Drop</h2>
+      <p>Drip Drop is a cutting-edge tech-enabled laundry service designed for busy students and professionals who value convenience and quality.</p>
+      <p>Our mission is to simplify your laundry experience with seamless app-based booking, contactless pickups, hygienic handling, and reliable delivery scheduled around your day.</p>
+      <p>Enjoy personalized wash care powered by AI and real-time tracking so your clothes get the treatment they deserve.</p>
+    </section>
 
-  <section id="features">
-    <h2>App Features</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <img src="feature1.png" alt="Home Dashboard" class="feature-img" />
-        <strong>Home Dashboard</strong>
-        <p>Overview and quick access to your account and orders.</p>
-      </div>
-      <div class="feature-card">
-        <img src="feature2.png" alt="Schedule Pickup" class="feature-img" />
-        <strong>Schedule Pickup & Alerts</strong>
-        <p>Set pick-up times and receive instant real-time alerts.</p>
-      </div>
-      <div class="feature-card">
-        <img src="feature3.png" alt="Wash Recommendations" class="feature-img" />
-        <strong>Personalized Wash Plans</strong>
-        <p>AI-driven recommendations tailored to your fabric care needs.</p>
-      </div>
-      <div class="feature-card">
-        <img src="feature4.png" alt="Secure Payment" class="feature-img" />
-        <strong>Secure Payments & Support</strong>
-        <p>Safe digital payments with 24/7 accessible customer support.</p>
-      </div>
-      <div class="feature-card">
-        <img src="feature5.png" alt="Live Tracking" class="feature-img" />
-        <strong>Live Order Tracking</strong>
-        <p>Track your laundry status from pickup till delivery in real-time.</p>
-      </div>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Founded to transform the laundry industry, Drip Drop connects you with trusted vendors through an intuitive app that provides transparent pricing, eco-friendly processes, and contactless interactions.</p>
+      <p>From UV sterilization of garments to sealed packaging and AI-recommended wash settings, we prioritize both your health and your clothing.</p>
+      <p>Our customer-first approach ensures secure, digital payments and around-the-clock support so every laundry day is stress free.</p>
+    </section>
 
-  <section id="roles">
-    <h2>Key Team Roles</h2>
-    <div class="roles">
-      <div class="role-card">
-        <img src="role1.jpg" alt="Shreepal Parekh" class="role-img" />
-        <div>Managing Director<br/>Shreepal Parekh</div>
+    <section id="features">
+      <h2>App Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="feature1.png" alt="Home Dashboard" class="feature-img" />
+          <strong>Home Dashboard</strong>
+          <p>Quick account overview and order summary at your fingertips.</p>
+        </div>
+        <div class="feature-card">
+          <img src="feature2.png" alt="Schedule Pickup" class="feature-img" />
+          <strong>Schedule Pickup & Alerts</strong>
+          <p>Effortlessly schedule pickups with timely, real-time notifications.</p>
+        </div>
+        <div class="feature-card">
+          <img src="feature3.png" alt="Personalized Wash Plans" class="feature-img" />
+          <strong>Personalized Wash Plans</strong>
+          <p>Tailored AI recommendations to keep your fabrics looking fresh.</p>
+        </div>
+        <div class="feature-card">
+          <img src="feature4.png" alt="Secure Payment" class="feature-img" />
+          <strong>Secure Payments & Support</strong>
+          <p>Safe transactions supported by 24/7 customer service.</p>
+        </div>
+        <div class="feature-card">
+          <img src="feature5.png" alt="Live Tracking" class="feature-img" />
+          <strong>Live Order Tracking</strong>
+          <p>Real-time updates from pickup to delivery, always in the loop.</p>
+        </div>
       </div>
-      <div class="role-card">
-        <img src="role2.jpg" alt="Simran Begrajka" class="role-img" />
-        <div>CEO<br/>Simran Begrajka</div>
-      </div>
-      <div class="role-card">
-        <img src="role3.jpg" alt="Alefiya Ravat" class="role-img" />
-        <div>COO<br/>Alefiya Ravat</div>
-      </div>
-      <div class="role-card">
-        <img src="role4.jpg" alt="Akhast Dubey" class="role-img" />
-        <div>CFO<br/>Akhast Dubey</div>
-      </div>
-      <div class="role-card">
-        <img src="role5.jpg" alt="Lavanya Daudkhane" class="role-img" />
-        <div>CMO<br/>Lavanya Daudkhane</div>
-      </div>
-      <div class="role-card">
-        <img src="role6.jpg" alt="Harshini Gosalia" class="role-img" />
-        <div>CTO<br/>Harshini Gosalia</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="pricing">
-    <h2>Pricing Plans</h2>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Plan</th>
-          <th>Details</th>
-          <th>Price</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Light Load Plan</td>
-          <td>Up to 5 items</td>
-          <td>₹25 + ₹15/order</td>
-          <td>Light loads</td>
-        </tr>
-        <tr>
-          <td>Medium Load Plan</td>
-          <td>6-10 items</td>
-          <td>₹45 + ₹15/order</td>
-          <td>Medium loads</td>
-        </tr>
-        <tr>
-          <td>Large Load Plan</td>
-          <td>11-15 items</td>
-          <td>₹65 + ₹15/order</td>
-          <td>Large loads, ironing included</td>
-        </tr>
-        <tr>
-          <td>Weekly Subscription</td>
-          <td>Up to 15 items</td>
-          <td>₹180</td>
-          <td>3 washes weekly, pick-up/drop included</td>
-        </tr>
-        <tr>
-          <td>Monthly Subscription</td>
-          <td>Up to 60 items</td>
-          <td>₹1090</td>
-          <td>Monthly payment, priority delivery</td>
-        </tr>
-        <tr>
-          <td>Yearly Subscription</td>
-          <td>Up to 720 items</td>
-          <td>₹12,000</td>
-          <td>12-month plan, discounted</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section id="roles">
+      <h2>Key Team Roles</h2>
+      <div class="roles">
+        <div class="role-card">
+          <img src="role1.jpg" alt="Shreepal Parekh" class="role-img" />
+          <div>Managing Director<br/>Shreepal Parekh</div>
+        </div>
+        <div class="role-card">
+          <img src="role2.jpg" alt="Simran Begrajka" class="role-img" />
+          <div>CEO<br/>Simran Begrajka</div>
+        </div>
+        <div class="role-card">
+          <img src="role3.jpg" alt="Alefiya Ravat" class="role-img" />
+          <div>COO<br/>Alefiya Ravat</div>
+        </div>
+        <div class="role-card">
+          <img src="role4.jpg" alt="Akhast Dubey" class="role-img" />
+          <div>CFO<br/>Akhast Dubey</div>
+        </div>
+        <div class="role-card">
+          <img src="role5.jpg" alt="Lavanya Daudkhane" class="role-img" />
+          <div>CMO<br/>Lavanya Daudkhane</div>
+        </div>
+        <div class="role-card">
+          <img src="role6.jpg" alt="Harshini Gosalia" class="role-img" />
+          <div>CTO<br/>Harshini Gosalia</div>
+        </div>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@dripdrop.com</p>
-    <p>Phone: +91 8899663322</p>
-  </section>
+    <section id="pricing">
+      <h2>Pricing Plans</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Details</th>
+            <th>Price</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Light Load Plan</td>
+            <td>Up to 5 items</td>
+            <td>₹25 + ₹15/order</td>
+            <td>Light loads</td>
+          </tr>
+          <tr>
+            <td>Medium Load Plan</td>
+            <td>6-10 items</td>
+            <td>₹45 + ₹15/order</td>
+            <td>Medium loads</td>
+          </tr>
+          <tr>
+            <td>Large Load Plan</td>
+            <td>11-15 items</td>
+            <td>₹65 + ₹15/order</td>
+            <td>Large loads, ironing included</td>
+          </tr>
+          <tr>
+            <td>Weekly Subscription</td>
+            <td>Up to 15 items</td>
+            <td>₹180</td>
+            <td>3 washes weekly, pick-up/drop included</td>
+          </tr>
+          <tr>
+            <td>Monthly Subscription</td>
+            <td>Up to 60 items</td>
+            <td>₹1090</td>
+            <td>Monthly payment, priority delivery</td>
+          </tr>
+          <tr>
+            <td>Yearly Subscription</td>
+            <td>Up to 720 items</td>
+            <td>₹12,000</td>
+            <td>12-month plan, discounted</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: support@dripdrop.com</p>
+      <p>Phone: +91 8811669977</p>
+    </section>
+  </main>
 
   <footer>© 2025 Drip Drop Laundry Service</footer>
-</body>
-</html>
 </body>
 </html>
 
