@@ -140,6 +140,77 @@
     font-size: 1.1rem;
   }
 
+  /* Pricing styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  th, td {
+    text-align: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid #d2daf8;
+    color: #1b366d;
+  }
+  th {
+    background-color: #d6e8ff;
+    font-weight: 600;
+  }
+  tr:hover {
+    background-color: #e6f0ff;
+    color: #03135f;
+  }
+
+  /* Registration form styles */
+  .register-section {
+    margin-top: 36px;
+    padding: 28px 24px;
+    border: 2px solid #1a73e8;
+    border-radius: 14px;
+    background: #f0f7ff;
+    box-shadow: 0 8px 20px rgba(26,115,232,0.25);
+  }
+  .register-section h3 {
+    margin-top: 0;
+    color: #1a4aba;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    letter-spacing: 0.03em;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  input[type="text"], input[type="email"], select {
+    flex: 1 1 240px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 1.8px solid #1a73e8;
+    border-radius: 6px;
+    outline-offset: 3px;
+    outline-color: #6399ff;
+    transition: box-shadow 0.3s ease;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, select:focus {
+    box-shadow: 0 0 10px #7cacff;
+  }
+  button {
+    flex: 1 1 140px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #1558bf;
+  }
+
   .roles {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
@@ -180,27 +251,7 @@
     font-weight: 500;
     font-size: 0.95rem;
     color: #0b3c80;
-    margin-top: 6px; /* added space */
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 1.1rem;
-  }
-  th, td {
-    text-align: center;
-    padding: 18px 24px;
-    border-bottom: 1px solid #d2daf8;
-    color: #1b366d;
-  }
-  th {
-    background-color: #d6e8ff;
-    font-weight: 600;
-  }
-  tr:hover {
-    background-color: #e6f0ff;
-    color: #03135f;
+    margin-top: 6px;
   }
 
   #contact p {
@@ -239,6 +290,13 @@
       width: 90vw !important;
       margin: 16px auto;
     }
+    form {
+      flex-direction: column;
+    }
+    input, button {
+      width: 100% !important;
+      flex: unset;
+    }
   }
 </style>
 </head>
@@ -250,8 +308,8 @@
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#features">App Features</a>
-  <a href="#roles">Key Roles</a>
   <a href="#pricing">Pricing</a>
+  <a href="#roles">Key Roles</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -297,36 +355,6 @@
       <img src="feature5.png" alt="Live Tracking" class="feature-img" />
       <strong>Live Order Tracking</strong>
       <p>Real-time updates from pickup to delivery, always in the loop.</p>
-    </div>
-  </div>
-</section>
-
-<section id="roles">
-  <h2>Key Team Roles</h2>
-  <div class="roles">
-    <div class="role-card">
-      <img src="role1.jpg" alt="Shreepal Parekh" class="role-img" />
-      <div>Shreepal Parekh<br /><span>Managing Director</span></div>
-    </div>
-    <div class="role-card">
-      <img src="role2.jpg" alt="Simran Begrajka" class="role-img" />
-      <div>Simran Begrajka<br /><span>CEO</span></div>
-    </div>
-    <div class="role-card">
-      <img src="role3.jpg" alt="Alefiya Ravat" class="role-img" />
-      <div>Alefiya Ravat<br /><span>COO</span></div>
-    </div>
-    <div class="role-card">
-      <img src="role4.jpg" alt="Akhast Dubey" class="role-img" />
-      <div>Akhast Dubey<br /><span>CFO</span></div>
-    </div>
-    <div class="role-card">
-      <img src="role5.jpg" alt="Lavanya Daudkhane" class="role-img" />
-      <div>Lavanya Daudkhane<br /><span>CMO</span></div>
-    </div>
-    <div class="role-card">
-      <img src="role6.jpg" alt="Harshini Gosalia" class="role-img" />
-      <div>Harshini Gosalia<br /><span>CTO</span></div>
     </div>
   </div>
 </section>
@@ -381,15 +409,61 @@
       </tr>
     </tbody>
   </table>
+  <div class="register-section">
+    <h3>Register Your Laundry Plan</h3>
+    <form>
+      <input type="text" name="fullname" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <select name="plan" required>
+        <option value="">Select Your Plan</option>
+        <option value="light">Light Load Plan</option>
+        <option value="medium">Medium Load Plan</option>
+        <option value="large">Large Load Plan</option>
+        <option value="weekly">Weekly Subscription</option>
+        <option value="monthly">Monthly Subscription</option>
+        <option value="yearly">Yearly Subscription</option>
+      </select>
+      <button type="submit">Register Now</button>
+    </form>
+  </div>
+</section>
+
+<section id="roles">
+  <h2>Key Team Roles</h2>
+  <div class="roles">
+    <div class="role-card">
+      <img src="role1.jpg" alt="Shreepal Parekh" class="role-img" />
+      <div>Shreepal Parekh<br /><span>Managing Director</span></div>
+    </div>
+    <div class="role-card">
+      <img src="role2.jpg" alt="Simran Begrajka" class="role-img" />
+      <div>Simran Begrajka<br /><span>CEO</span></div>
+    </div>
+    <div class="role-card">
+      <img src="role3.jpg" alt="Alefiya Ravat" class="role-img" />
+      <div>Alefiya Ravat<br /><span>COO</span></div>
+    </div>
+    <div class="role-card">
+      <img src="role4.jpg" alt="Akhast Dubey" class="role-img" />
+      <div>Akhast Dubey<br /><span>CFO</span></div>
+    </div>
+    <div class="role-card">
+      <img src="role5.jpg" alt="Lavanya Daudkhane" class="role-img" />
+      <div>Lavanya Daudkhane<br /><span>CMO</span></div>
+    </div>
+    <div class="role-card">
+      <img src="role6.jpg" alt="Harshini Gosalia" class="role-img" />
+      <div>Harshini Gosalia<br /><span>CTO</span></div>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact Us</h2>
   <p>Email: support@dripdrop.com</p>
-  <p>Phone: +91 7788996655</p>
+  <p>Phone: +91 8899665544</p>
 </section>
 
 <footer>© 2025 Drip Drop Laundry Service</footer>
 </body>
 </html>
-
